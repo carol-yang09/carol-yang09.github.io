@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>如何在 GitHub 發 PR - Carol&#039;s Notebook</title><meta description="PR (Pull Request) 的作用在，當你想修改某個你沒有權限的專案(以 GitHub 為例)，你可以將此專案 Fork 到自己的資料庫中，當完成某功能後，通知該專案的作者，告知你已修改了某功能，並將修改好的資料給原作者檢查，若他同意則會合併到他的專案中。"><meta property="og:type" content="blog"><meta property="og:title" content="如何在 GitHub 發 PR"><meta property="og:url" content="https://carol-yang09.github.io/2020/10/01/pr-learn/"><meta property="og:site_name" content="Carol&#039;s Notebook"><meta property="og:description" content="PR (Pull Request) 的作用在，當你想修改某個你沒有權限的專案(以 GitHub 為例)，你可以將此專案 Fork 到自己的資料庫中，當完成某功能後，通知該專案的作者，告知你已修改了某功能，並將修改好的資料給原作者檢查，若他同意則會合併到他的專案中。"><meta property="og:locale" content="zh_TW"><meta property="og:image" content="https://carol-yang09.github.io/2020/10/01/pr-learn/1-1.png"><meta property="og:image" content="https://carol-yang09.github.io/2020/10/01/pr-learn/2-2.png"><meta property="og:image" content="https://carol-yang09.github.io/2020/10/01/pr-learn/3.png"><meta property="og:image" content="https://carol-yang09.github.io/2020/10/01/pr-learn/4.png"><meta property="og:image" content="https://carol-yang09.github.io/2020/10/01/pr-learn/5.png"><meta property="og:image" content="https://carol-yang09.github.io/2020/10/01/pr-learn/6.png"><meta property="og:image" content="https://carol-yang09.github.io/2020/10/01/pr-learn/7.png"><meta property="og:image" content="https://carol-yang09.github.io/2020/10/01/pr-learn/8.png"><meta property="og:image" content="https://carol-yang09.github.io/2020/10/01/pr-learn/9.png"><meta property="og:image" content="https://carol-yang09.github.io/2020/10/01/pr-learn/10.png"><meta property="og:image" content="https://carol-yang09.github.io/2020/10/01/pr-learn/10.png"><meta property="og:image" content="https://carol-yang09.github.io/2020/10/01/pr-learn/11-2.png"><meta property="og:image" content="https://carol-yang09.github.io/2020/10/01/pr-learn/12-2.png"><meta property="og:image" content="https://carol-yang09.github.io/2020/10/01/pr-learn/13.png"><meta property="og:image" content="https://carol-yang09.github.io/2020/10/01/pr-learn/14-2.png"><meta property="og:image" content="https://carol-yang09.github.io/2020/10/01/pr-learn/15.png"><meta property="article:published_time" content="2020-09-30T20:50:00.000Z"><meta property="article:modified_time" content="2021-01-06T18:05:55.719Z"><meta property="article:author" content="Carol Yang"><meta property="article:tag" content="Git"><meta property="article:tag" content="GitHub"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/2020/10/01/pr-learn/1-1.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://carol-yang09.github.io/2020/10/01/pr-learn/"},"headline":"Carol's Notebook","image":["https://carol-yang09.github.io/2020/10/01/pr-learn/1-1.png","https://carol-yang09.github.io/2020/10/01/pr-learn/2-2.png","https://carol-yang09.github.io/2020/10/01/pr-learn/3.png","https://carol-yang09.github.io/2020/10/01/pr-learn/4.png","https://carol-yang09.github.io/2020/10/01/pr-learn/5.png","https://carol-yang09.github.io/2020/10/01/pr-learn/6.png","https://carol-yang09.github.io/2020/10/01/pr-learn/7.png","https://carol-yang09.github.io/2020/10/01/pr-learn/8.png","https://carol-yang09.github.io/2020/10/01/pr-learn/9.png","https://carol-yang09.github.io/2020/10/01/pr-learn/10.png","https://carol-yang09.github.io/2020/10/01/pr-learn/10.png","https://carol-yang09.github.io/2020/10/01/pr-learn/11-2.png","https://carol-yang09.github.io/2020/10/01/pr-learn/12-2.png","https://carol-yang09.github.io/2020/10/01/pr-learn/13.png","https://carol-yang09.github.io/2020/10/01/pr-learn/14-2.png","https://carol-yang09.github.io/2020/10/01/pr-learn/15.png"],"datePublished":"2020-09-30T20:50:00.000Z","dateModified":"2021-01-06T18:05:55.719Z","author":{"@type":"Person","name":"Carol Yang"},"description":"PR (Pull Request) 的作用在，當你想修改某個你沒有權限的專案(以 GitHub 為例)，你可以將此專案 Fork 到自己的資料庫中，當完成某功能後，通知該專案的作者，告知你已修改了某功能，並將修改好的資料給原作者檢查，若他同意則會合併到他的專案中。"}</script><link rel="canonical" href="https://carol-yang09.github.io/2020/10/01/pr-learn/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/monokai.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><meta name="generator" content="Hexo 5.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">Carol&#039;s Notebook</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item is-hidden-tablet catalogue" title="文章目錄" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜尋" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-9-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-09-30T20:50:00.000Z" title="2020-09-30T20:50:00.000Z">2020-10-01</time>發表</span><span class="level-item"><time dateTime="2021-01-06T18:05:55.719Z" title="2021-01-06T18:05:55.719Z">2021-01-07</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/Git/">Git</a><span> / </span><a class="link-muted" href="/categories/GitHub/">GitHub</a></span></div></div><h1 class="title is-3 is-size-4-mobile">如何在 GitHub 發 PR</h1><div class="content"><p>PR (Pull Request) 的作用在，當你想修改某個你沒有權限的專案(以 GitHub 為例)，你可以將此專案 Fork 到自己的資料庫中，當完成某功能後，通知該專案的作者，告知你已修改了某功能，並將修改好的資料給原作者檢查，若他同意則會合併到他的專案中。</p>
+<a id="more"></a>
+
+<h2 id="一、什麼是發-PR-Pull-Request"><a href="#一、什麼是發-PR-Pull-Request" class="headerlink" title="一、什麼是發 PR (Pull Request)"></a>一、什麼是發 PR (Pull Request)</h2><p>在 GitHub 中有很多專案，當你想幫一個專案修改程式碼，但你並非此專案開發者，你可以將這個專案 Fork (類似於拷貝) 到自己的 GitHub 資料庫中，修改後，再向原作者提出 <code>Pull Request</code> 請求 (<code>請原作者拉回去(Pull)的請求(Request)</code>)，通知原作者你修改了他的專案，並希望他合併你的修改。</p>
+<h2 id="二、Pull-Request-簡易流程"><a href="#二、Pull-Request-簡易流程" class="headerlink" title="二、Pull Request 簡易流程"></a>二、Pull Request 簡易流程</h2><ol>
+<li>Fork (類似於拷貝) 別人的專案到自己 Github 資料庫</li>
+<li>Clone 遠端儲存庫到本地端，修改程式碼後，推回遠端 (Push)</li>
+<li>發 PR 給原作者，通知原作者，你修改了他的程式碼，請他看一下</li>
+<li>如果原作者覺得可以，則會將你修改的內容合併 (Merge) 到自己的專案中</li>
+</ol>
+<h2 id="三、Pull-Request-詳細流程"><a href="#三、Pull-Request-詳細流程" class="headerlink" title="三、Pull Request 詳細流程"></a>三、Pull Request 詳細流程</h2><h3 id="步驟一：-Fork-專案"><a href="#步驟一：-Fork-專案" class="headerlink" title="步驟一： Fork 專案"></a>步驟一： Fork 專案</h3><ul>
+<li>首先我想要修改 hexschool 的 hexschoolGit 專案，點選右上方 Fork 按鈕，把專案 Fork 到我的 GitHub 資料庫中</li>
+</ul>
+<p><img src="/2020/10/01/pr-learn/1-1.png"></p>
+<ul>
+<li>按下 Fork 後，會發現自己 GitHub 資料庫中已建立一個同名的專案，上面會註解是由哪個專案 Fork 而來</li>
+<li>專案名下會顯示是由哪個專案 Fork 而來</li>
+</ul>
+<p><img src="/2020/10/01/pr-learn/2-2.png"></p>
+<h3 id="步驟二：-將專案複製到電腦"><a href="#步驟二：-將專案複製到電腦" class="headerlink" title="步驟二： 將專案複製到電腦"></a>步驟二： 將專案複製到電腦</h3><ul>
+<li><p>將自己的專案，使用 Git 指令將專案複製到電腦</p>
+</li>
+<li><p>複製以下網址後<br><img src="/2020/10/01/pr-learn/3.png"></p>
+</li>
+<li><p>在終端機使用以下 Git 指令，複製專案到電腦</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;carol-yang09&#x2F;hexschoolGit.git</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<blockquote>
+<p>複製專案到電腦後，利用 sourcetree 工具可看到，目前本地端有 master 分支，遠端有 origin/master、origin/dev、origin/HEAD 分支<br><img src="/2020/10/01/pr-learn/4.png"><br>雖然專案有 dev 分支，但在本地端並沒有，因為使用 git clone 預設只會抓 master 分支下來<br>可在終端機使用指令<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout dev</span><br></pre></td></tr></table></figure><br>利用 GitHub 機制，如果使用 checkout 切換分支時，若本地端找不到此分支，會到遠端找，找到後會自動把遠端分支抓下，如下圖<br><img src="/2020/10/01/pr-learn/5.png"><br>這時開啟 sourcetree 可以看到本地端多了一個 dev 分支<br><img src="/2020/10/01/pr-learn/6.png"></p>
+</blockquote>
+<h3 id="步驟三：-編輯新功能"><a href="#步驟三：-編輯新功能" class="headerlink" title="步驟三： 編輯新功能"></a>步驟三： 編輯新功能</h3><ul>
+<li>因為要開一個新功能，因此切換到 dev 分支後，建立一個 feature/addFile 分支，並切換到此分支 ( 使用 Git flow 流程)</li>
+</ul>
+<p><img src="/2020/10/01/pr-learn/7.png"></p>
+<ul>
+<li>當完成 feature/addFile 分支的功能後，切換到 dev 分支，合併 feature/addFile 至 dev 分支</li>
+</ul>
+<blockquote>
+<p>在 feature/addFile 分支建立好功能，開啟 sourcetree 查看<br><img src="/2020/10/01/pr-learn/8.png"><br>切換到 dev 分支後，dev 分支合併 feature/addFile 分支後結果<br><img src="/2020/10/01/pr-learn/9.png"></p>
+</blockquote>
+<ul>
+<li><p>最後使用以下 Git 指令，將最後成果推到送遠端 (注意是推送 dev 分支)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin dev</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>開啟自己的 GitHub 專案，可看到，遠端 dev 分支已更新</p>
+</li>
+</ul>
+<p><img src="/2020/10/01/pr-learn/10.png"></p>
+<h3 id="步驟四：-發-PR"><a href="#步驟四：-發-PR" class="headerlink" title="步驟四： 發 PR"></a>步驟四： 發 PR</h3><ul>
+<li>在編輯新功能後，可以在自己 Fork 的 GitHub 專案看到，系統詢問你要不要對原作者發出合併請求</li>
+</ul>
+<p><img src="/2020/10/01/pr-learn/10.png"></p>
+<ul>
+<li>按下 <code>compare &amp; pull request</code> 按鈕，發出請求，會跳到對方專案中 pull requests 頁面</li>
+<li>寫下申請的標題與內容，最後點擊 <code>create pull request</code> 按鈕</li>
+</ul>
+<blockquote>
+<p>在此要注意，要請求合併對方 dev 分支，而非 master 分支</p>
+</blockquote>
+<p><img src="/2020/10/01/pr-learn/11-2.png"></p>
+<ul>
+<li>發送 PR 完成狀態</li>
+</ul>
+<p><img src="/2020/10/01/pr-learn/12-2.png"></p>
+<ul>
+<li>現在可在對方專案 pull requests 頁面看到自己的請求</li>
+</ul>
+<p><img src="/2020/10/01/pr-learn/13.png"></p>
+<h3 id="步驟五：-查看已發的-PR"><a href="#步驟五：-查看已發的-PR" class="headerlink" title="步驟五： 查看已發的 PR"></a>步驟五： 查看已發的 PR</h3><ul>
+<li>當對方同意合併請求後，可在對方專案 pull requests 頁面的 closed，看到自己已被同意的請求</li>
+</ul>
+<p><img src="/2020/10/01/pr-learn/14-2.png"></p>
+<ul>
+<li>同時 GitHub 也會寄送通知給你</li>
+</ul>
+<p><img src="/2020/10/01/pr-learn/15.png"></p>
+<ul>
+<li>完成此次任務啦!!</li>
+</ul>
+</div><div class="article-tags size-small mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Git/">Git</a><a class="link-muted mr-2" rel="tag" href="/tags/GitHub/">GitHub</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/11/04/recover-git-reset/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">救回 git reset --hard</span></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">評論</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://carol-yang09.github.io/2020/10/01/pr-learn/';
+            this.page.identifier = 'some-disqus-id';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'carols-notebook-blog' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-3-desktop is-3-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">文章目錄</h3><ul class="menu-list"><li><a class="level is-mobile" href="#一、什麼是發-PR-Pull-Request" style="margin-bottom: 0px"><span class="level-left"><span class="level-item">一、什麼是發 PR (Pull Request)</span></span></a></li><li><a class="level is-mobile" href="#二、Pull-Request-簡易流程" style="margin-bottom: 0px"><span class="level-left"><span class="level-item">二、Pull Request 簡易流程</span></span></a></li><li><a class="level is-mobile" href="#三、Pull-Request-詳細流程" style="margin-bottom: 0px"><span class="level-left"><span class="level-item">三、Pull Request 詳細流程</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#步驟一：-Fork-專案" style="margin-bottom: 0px"><span class="level-left"><span class="level-item">步驟一： Fork 專案</span></span></a></li><li><a class="level is-mobile" href="#步驟二：-將專案複製到電腦" style="margin-bottom: 0px"><span class="level-left"><span class="level-item">步驟二： 將專案複製到電腦</span></span></a></li><li><a class="level is-mobile" href="#步驟三：-編輯新功能" style="margin-bottom: 0px"><span class="level-left"><span class="level-item">步驟三： 編輯新功能</span></span></a></li><li><a class="level is-mobile" href="#步驟四：-發-PR" style="margin-bottom: 0px"><span class="level-left"><span class="level-item">步驟四： 發 PR</span></span></a></li><li><a class="level is-mobile" href="#步驟五：-查看已發的-PR" style="margin-bottom: 0px"><span class="level-left"><span class="level-item">步驟五： 查看已發的 PR</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: block; }</style><script src="/js/toc.js" defer></script></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分類</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/Git/"><span class="level-start"><span class="level-item">Git</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/GitHub/"><span class="level-start"><span class="level-item">GitHub</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Hexo/"><span class="level-start"><span class="level-item">Hexo</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">標籤</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Git/"><span class="tag">Git</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GitHub/"><span class="tag">GitHub</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hexo/"><span class="tag">Hexo</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Icarus/"><span class="tag">Icarus</span><span class="tag is-grey-lightest">3</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">Carol&#039;s Notebook</a><p class="size-small"><span>&copy; 2021 Carol Yang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" async></script><script>moment.locale("zh-TW");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到頁首" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="請輸入關鍵字..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"請輸入關鍵字...","untitled":"(無標題)","posts":"文章","pages":"頁面","categories":"分類","tags":"標籤"});
+        });</script></body></html>
